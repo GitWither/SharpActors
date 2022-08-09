@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpActors", "SharpActors\SharpActors.csproj", "{A173A576-E710-4A57-B42D-E282BDAB2D81}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpActorsTests", "SharpActorsTests\SharpActorsTests.csproj", "{A9FA19FD-9425-40E1-99B3-3518124D9099}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A173A576-E710-4A57-B42D-E282BDAB2D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A173A576-E710-4A57-B42D-E282BDAB2D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A173A576-E710-4A57-B42D-E282BDAB2D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A173A576-E710-4A57-B42D-E282BDAB2D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9FA19FD-9425-40E1-99B3-3518124D9099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9FA19FD-9425-40E1-99B3-3518124D9099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9FA19FD-9425-40E1-99B3-3518124D9099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9FA19FD-9425-40E1-99B3-3518124D9099}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE4DB4DE-7F6C-463C-8561-A2BE50B0CF9F}
+	EndGlobalSection
+EndGlobal
