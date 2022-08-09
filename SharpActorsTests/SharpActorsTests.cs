@@ -18,6 +18,11 @@ namespace SharpActorsTests
         public int handle;
     }
 
+    public struct RigidbodyComponent
+    {
+        public int handle;
+    }
+
     public class RenderSystem : ActorSystem
     {
         void Update()
@@ -27,6 +32,11 @@ namespace SharpActorsTests
                 
             }
         }
+    }
+
+    public class PhysicsSystem : ActorSystem
+    {
+
     }
 
 
@@ -208,13 +218,21 @@ namespace SharpActorsTests
         {
             ActorRegistry actorRegistry = new ActorRegistry(MaxActors);
 
+            actorRegistry.RegisterComponent<TransformComponent>();
+            actorRegistry.RegisterComponent<RigidbodyComponent>();
             actorRegistry.RegisterComponent<MeshComponent>();
 
             RenderSystem renderSystem = actorRegistry.RegisterSystem<RenderSystem, MeshComponent>();
+            PhysicsSystem physicsSystem = actorRegistry.RegisterSystem<PhysicsSystem, TransformComponent, RigidbodyComponent>();
 
             for (int i = 0; i < 200; i++)
             {
                 int actor = actorRegistry.CreateActor();
+                actorRegistry.AddComponent<TransformComponent>(i);
+                if (i > 150)
+                {
+                    actorRegistry.AddComponent<RigidbodyComponent>(i);
+                }
                 if (i > 100)
                 {
                     actorRegistry.AddComponent<MeshComponent>(actor);
@@ -222,12 +240,14 @@ namespace SharpActorsTests
             }
 
             Assert.AreEqual(99, renderSystem.Actors.Count);
+            Assert.AreEqual(49, physicsSystem.Actors.Count);
 
             for (int i = 101; i < 200; i++)
             {
                 actorRegistry.RemoveComponent<MeshComponent>(i);
             }
 
+            Assert.AreEqual(49, physicsSystem.Actors.Count);
             Assert.AreEqual(0, renderSystem.Actors.Count);
         }
     }
