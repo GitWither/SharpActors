@@ -48,3 +48,5 @@ public RenderSystem : ActorSystem {
 
 RenderSystem renderSystem = actorRegistry.RegisterSystem<CoolComponent, RenderingComponent>()
 ```
+
+You can find more examples in the [Unit Tests](https://github.com/GitWither/SharpActors/blob/master/SharpActorsTests/SharpActorsTests.cs)
