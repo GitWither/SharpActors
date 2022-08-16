@@ -198,11 +198,13 @@ namespace SharpActorsTests
             ActorRegistry actorRegistry = new ActorRegistry(MaxActors);
 
             actorRegistry.RegisterComponent<MeshComponent>();
+            actorRegistry.RegisterComponent<TransformComponent>();
 
             for (int i = 0; i < 80000; i++)
             {
                 int actor = actorRegistry.CreateActor();
                 actorRegistry.AddComponent<MeshComponent>(actor);
+                //actorRegistry.AddComponent<TransformComponent>(actor);
 
                 actorRegistry.DestroyActor(actor);
 

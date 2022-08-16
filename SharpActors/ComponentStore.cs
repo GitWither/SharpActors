@@ -54,6 +54,8 @@ namespace SharpActors
 
         public void CleanUpActor(Actor actor)
         {
+            if (!m_ActorToIndex.ContainsKey(actor)) return;
+
             this.RemoveData(actor);
         }
     }
